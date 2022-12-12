@@ -24,7 +24,7 @@ public class Client {
     return stub.getCarById(id);
   }
 
-  private Person getPersonById(int personId) {
+  private PersonDTO getPersonById(int personId) {
     Id id = Id.newBuilder().setId(personId).build();
     return stub.getPersonById(id);
   }
@@ -42,7 +42,7 @@ public class Client {
     Car car = client.getCarById(11);
     logger.info("Car ------> \n" + car.toString());
 
-    Person person = client.getPersonById(22);
+    PersonDTO person = client.getPersonById(22);
     logger.info("Person ---> \n" + TextFormat.printer().escapingNonAscii(false).printToString(person));
 
     channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);

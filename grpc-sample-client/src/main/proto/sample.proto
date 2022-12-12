@@ -11,11 +11,11 @@ service Sample{
 
   rpc getCarById(Id) returns(Car);
 
-  rpc getPersonById(Id) returns(Person);
+  rpc getPersonById(Id) returns(PersonDTO);
 
 }
 
-message Person{
+message PersonDTO{
   int32 id = 1;
   string name = 2;
 //  int32 age = 3;
