@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.example.client";
+//option java_outer_classname = "SampleProto";
+//option objc_class_prefix = "SMPL";
+
+package sample;
+
+service Sample{
+
+  rpc getCarById(Id) returns(Car);
+
+  rpc getPersonById(Id) returns(Person);
+
+}
+
+message Person{
+  int32 id = 1;
+  string name = 2;
+//  int32 age = 3;
+  Car car = 4;
+}
+
+message Car{
+  int32 id = 1;
+  string brandName = 2;
+  string model = 3;
+}
+
+message Id{
+  int32 id = 1;
+}
